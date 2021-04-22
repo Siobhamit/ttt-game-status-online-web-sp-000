@@ -60,7 +60,7 @@ def over?(board)
    ( draw?(board) || won?(board) ) ? TRUE : FALSE
 end
 
-def winner?
+def winner?(board)
   If won?(board)
   return board[combination[1]]
 end
