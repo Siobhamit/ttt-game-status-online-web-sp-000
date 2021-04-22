@@ -44,18 +44,21 @@ combination = false
 # end
 # a.any?
 # end
-
 def full?(board)
-  [!position_taken?(board, 0),
-    !position_taken?(board, 1),
-    !position_taken?(board, 2),
-    !position_taken?(board, 3),
-    !position_taken?(board, 4),
-    !position_taken?(board, 5),
-    !position_taken?(board, 6),
-    !position_taken?(board, 7),
-    !position_taken?(board, 8)].any? ? FALSE : TRUE
+  [0..8].map { |n| !position_taken?(board, n) }.any?
 end
+
+# def full?(board)
+#   [!position_taken?(board, 0),
+#     !position_taken?(board, 1),
+#     !position_taken?(board, 2),
+#     !position_taken?(board, 3),
+#     !position_taken?(board, 4),
+#     !position_taken?(board, 5),
+#     !position_taken?(board, 6),
+#     !position_taken?(board, 7),
+#     !position_taken?(board, 8)].any? ? FALSE : TRUE
+# end
 
 def draw?(board)
  ( full?(board) && (won?(board) == FALSE) ) ? TRUE : FALSE
