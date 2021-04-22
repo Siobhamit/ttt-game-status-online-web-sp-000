@@ -61,6 +61,6 @@ def over?(board)
 end
 
 def winner(board)
-  If won?(board)
+  If won?(board) == combination
   return board[combination[1]]
 end
