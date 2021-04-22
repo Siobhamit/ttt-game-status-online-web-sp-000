@@ -35,30 +35,22 @@ combination = false
 #    [loop  { !(position_taken?(board, index = 0))
 #    index += 1 until index == 8 } ].any? ? FALSE : TRUE
 #end
-# def full?(board)
-# a = Array.new
-# [0..8].each do |index|
-# b =  !position_taken?(board, index)
-# puts b
-# a << b
-# end
-# a.any?
-# end
-def full?(board)
-  [0..8].map { |n| !position_taken?(board, n) }.any?
-end
 
 # def full?(board)
-#   [!position_taken?(board, 0),
-#     !position_taken?(board, 1),
-#     !position_taken?(board, 2),
-#     !position_taken?(board, 3),
-#     !position_taken?(board, 4),
-#     !position_taken?(board, 5),
-#     !position_taken?(board, 6),
-#     !position_taken?(board, 7),
-#     !position_taken?(board, 8)].any? ? FALSE : TRUE
+#   [0..8].map { |n| !position_taken?(board, n) }.any?
 # end
+
+def full?(board)
+  [!position_taken?(board, 0),
+    !position_taken?(board, 1),
+    !position_taken?(board, 2),
+    !position_taken?(board, 3),
+    !position_taken?(board, 4),
+    !position_taken?(board, 5),
+    !position_taken?(board, 6),
+    !position_taken?(board, 7),
+    !position_taken?(board, 8)].any? ? FALSE : TRUE
+end
 
 def draw?(board)
  ( full?(board) && (won?(board) == FALSE) ) ? TRUE : FALSE
