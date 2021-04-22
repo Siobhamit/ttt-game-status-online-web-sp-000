@@ -64,4 +64,4 @@ def winner?
   If won?(board)
   return board[combination[1]]
 end
-end 
+
